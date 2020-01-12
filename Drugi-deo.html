@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .dropdown {
+            background-color: brown;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown:hover {
+            background-color: cadetblue;
+            cursor: pointer;
+        }
+
+        .dropdown-content p:hover {
+            background: chartreuse;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<html>
+<body>
+
+<header>
+<div class="dropdown">
+    <span onclick="dropdown()">Click Here</span>
+    <div class="dropdown-content">
+        <p>Prva</p>
+        <p>Druga</p>
+        <p>Treca</p>
+        <p>Cetvrta</p>
+        <p>Peta</p>
+    </div>
+</div>
+</header>
+</body>
+<script>
+    let opened = false;
+
+    function dropdown() {
+        opened = !opened;
+        console.log(opened)
+        if (opened) $(".dropdown-content").css("display", "block");
+        else $(".dropdown-content").css("display", "none")
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+    body{
+        margin: 0;
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li div {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li div:hover {
+  background-color: #111;
+}
+
+.mystyle{
+    background-color: aqua;
+}
+
+</style>
+</head>
+<html>
+<body>
+<header>
+    <ul>
+        <li><div id="prva" onclick="switchMenu('prva')">Prva</div></li>
+        <li><div id="druga" onclick="switchMenu('druga')">Druga</div></li>
+        <li><div id="treca" onclick="switchMenu('treca')">Treca</div></li>
+      </ul>
+      <div id="content" style="width:100px; height:100px">
+
+      </div>
+</header>
+</body>
+<script>
+    $(document).ready(function(){
+            $("#prva").addClass("mystyle");
+             document.getElementById('content').innerHTML = "prva"
+        
+    });
+
+    function switchMenu(hash){
+        $("#prva").removeClass("mystyle");
+        $("#druga").removeClass("mystyle");
+        $("#treca").removeClass("mystyle");
+        if(hash == 'prva'){
+        document.getElementById('content').innerHTML = "prva"
+        $("#prva").addClass("mystyle");
+        }
+        else if(hash == "druga"){
+        document.getElementById('content').innerHTML = "druga"
+        $("#druga").addClass("mystyle");
+        }
+        else{
+     $("#treca").addClass("mystyle");
+        document.getElementById('content').innerHTML = "treca"
+    }
+}
+
+    </script>
+</html>
+
